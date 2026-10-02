@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "hash_algorithm": "sha256",
+  "operation": "consistency",
+  "old_size": 1,
+  "new_size": 1,
+  "old_root": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+  "new_root": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+  "proof": []
+}

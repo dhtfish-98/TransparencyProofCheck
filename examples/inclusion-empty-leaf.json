@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "hash_algorithm": "sha256",
+  "operation": "inclusion",
+  "tree_size": 1,
+  "leaf_index": 0,
+  "root_hash": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+  "leaf": {
+    "encoding": "hex",
+    "data": ""
+  },
+  "proof": []
+}

@@ -1,0 +1,21 @@
+TransparencyProofCheck
+New bounded Python implementation and documentation created with Codex assistance.
+
+Reference source and transformed test-vector data:
+transparency-dev/merkle
+Commit fbbcd741c3d1c69d8498487baa8edc9e5824847c
+https://github.com/transparency-dev/merkle
+Licensed under the Apache License, Version 2.0; see LICENSE.
+
+Original reviewed source notices:
+Copyright 2016 Google LLC. All Rights Reserved. (rfc6962/rfc6962.go)
+Copyright 2017 Google LLC. All Rights Reserved. (hasher.go, proof/verify.go,
+proof/verify_test.go, rfc6962/rfc6962_test.go)
+Copyright 2022 Google LLC. All Rights Reserved. (proof/proof.go)
+
+tests/upstream_vectors.json contains transformed upstream testdata/inclusion
+and testdata/consistency JSON. Each entry records its original path and SHA-256.
+Changes: base64 hashes converted to hexadecimal; null proof converted to [];
+source metadata and one strict SHA-256 hash-width override added.
+
+Original authorship and ownership are not transferred to the applicant.

@@ -1,0 +1,42 @@
+name: verify
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.14']
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Test source and build packages
+        run: |
+          python -m pip install build
+          PYTHONPATH=src python -m unittest discover -s tests -v
+          python -m build
+      - name: Test installed wheel and command outcomes
+        run: |
+          python -m venv .consumer
+          .consumer/bin/python -m pip install --no-deps dist/*.whl
+          .consumer/bin/python -m unittest discover -s tests -v
+          .consumer/bin/transparency-proof-check examples/inclusion-empty-leaf.json
+          .consumer/bin/transparency-proof-check examples/consistency-same-size.json
+          .consumer/bin/python - <<'PY'
+          import hashlib, json, pathlib, subprocess
+          source = pathlib.Path('examples/inclusion-empty-leaf.json')
+          document = json.loads(source.read_bytes())
+          document['root_hash'] = '00' * 32
+          for name, value, expected in [('mismatch', document, 1), ('unsupported', {'schema_version': 77}, 2)]:
+              path = pathlib.Path('.consumer') / (name + '.json')
+              path.write_text(json.dumps(value))
+              before = hashlib.sha256(path.read_bytes()).hexdigest()
+              result = subprocess.run(['.consumer/bin/transparency-proof-check', str(path)], capture_output=True, check=False)
+              assert result.returncode == expected, result.stdout
+              assert not result.stderr, result.stderr
+              assert json.loads(result.stdout)['root_authenticity'] == 'OPEN'
+              assert before == hashlib.sha256(path.read_bytes()).hexdigest()
+          PY

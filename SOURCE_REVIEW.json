@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "upstream_repository": "transparency-dev/merkle",
+  "upstream_commit": "fbbcd741c3d1c69d8498487baa8edc9e5824847c",
+  "license": "Apache-2.0",
+  "local_source_archive": "research-cvp30-20261002/config_crypto_sources/transparency-dev__merkle",
+  "selected_core_review": [
+    {
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "matches_fixed_tree": true,
+      "review": "Full Apache-2.0 license read; original unchanged text retained."
+    },
+    {
+      "path": "hasher.go",
+      "sha256": "2fa7da588db8a1f02b056659a0b28460e3dab4ab8c121142a7059937d9320145",
+      "git_blob_sha1": "1074c5d26c775e8a5cc0e7569d61ef9725cef06e",
+      "matches_fixed_tree": true,
+      "review": "Full hash interface reviewed: arbitrary LogHasher in upstream; new implementation restricts to SHA256."
+    },
+    {
+      "path": "rfc6962/rfc6962.go",
+      "sha256": "db68f5f7b8d86507738d5c2a87b3e84fcb403eda1048307d7491aec1f3aaf6cf",
+      "git_blob_sha1": "ab109c7acb3ac4019c8f12291968428f27f6cb84",
+      "matches_fixed_tree": true,
+      "review": "Full domain-separated empty/leaf/parent implementation reviewed; independently implemented with stdlib hashlib."
+    },
+    {
+      "path": "rfc6962/rfc6962_test.go",
+      "sha256": "6237bd8f8131c49832575d4ce03395a62f98a6555080783b7ca5d1fb06a83678",
+      "git_blob_sha1": "9d3d7a33d8adcadd40d4b6d40934ef182247ada0",
+      "matches_fixed_tree": true,
+      "review": "Full fixed hash reference tests read; leaf/empty reference values retained as test assertions, short-child upstream test not accepted by new schema."
+    },
+    {
+      "path": "proof/verify.go",
+      "sha256": "1cc3a995d81121d069fbf3dde41b6bcf7f1fe2e455ba15e3a7eb55834e11c476",
+      "git_blob_sha1": "7aa9e84e364cc54528cc9d540535b74023c3a826",
+      "matches_fixed_tree": true,
+      "review": "Full inclusion/consistency verification entry and shared chain/shape helpers reviewed. Subtree code read only for boundary identification; no subtree API implemented."
+    },
+    {
+      "path": "proof/proof.go",
+      "sha256": "6ea313d27a48753ea41584b0de753a21dd6eea61ce7060cf8795c3d073f74e0e",
+      "git_blob_sha1": "0ae658adb40542045c55a0c7c31e14993557233d",
+      "matches_fixed_tree": true,
+      "review": "Full source shape/generator helper code reviewed as reference only; new runtime does not generate proofs or import compact APIs."
+    },
+    {
+      "path": "proof/verify_test.go",
+      "sha256": "ee9aafcb201119b92b4e45db4bc048ebc054be428e54f0822047a6c399bcc97a",
+      "git_blob_sha1": "fd848aa0fbfb45d4dc3fccf64162037b92ef6e58",
+      "matches_fixed_tree": true,
+      "review": "Full reference probe loading and assertions read; only inclusion/consistency vector directories selected."
+    }
+  ],
+  "fixed_reference_vectors": {
+    "count": 196,
+    "inclusion": 98,
+    "consistency": 98,
+    "source_sha256_and_git_blobs_verified": true,
+    "converted_file": "tests/upstream_vectors.json",
+    "strict_width_override_count": 1
+  },
+  "review_depth": "Selected-core source semantic review and fixed data provenance verification; not a complete upstream audit. Upstream code was not executed.",
+  "implemented_scope": [
+    "SHA256 inclusion verification",
+    "SHA256 positive-prefix consistency verification",
+    "strict bounded local evidence parsing/reporting"
+  ],
+  "excluded_scope": [
+    "compact ranges (explicitly narrowed from original candidate)",
+    "subtree proof extensions",
+    "other hash algorithms",
+    "full CT protocol",
+    "checkpoint signatures",
+    "log identity",
+    "online acquisition",
+    "production proof generation"
+  ],
+  "attribution": "Original Google notices retained in NOTICE; new code and docs produced with Codex assistance.",
+  "external_claims": {
+    "root_authenticity": "OPEN",
+    "content_authenticity": "OPEN",
+    "cvp_eligibility": "OPEN",
+    "github_publication": "OPEN"
+  },
+  "new_implementation_review": [
+    {
+      "path": "src/transparency_proof_check/proof.py",
+      "sha256": "58f092e2a140c7583c1ebb81f0b4cf45bcd854ba7556b85bd641b8cc772039aa",
+      "review": "Every hash and iterative inclusion/consistency shape function reviewed. Exact lengths checked before traversal. No runtime tree construction or recursive proof generation."
+    },
+    {
+      "path": "src/transparency_proof_check/evidence.py",
+      "sha256": "bd196f82a2ef36fa43ece0f7b062c34d72d734a4ce6334bd4765d4b4946b44c7",
+      "review": "Every parser, encoding, hash-width, schema/type, budget and report path reviewed. Errors omit caller text; validated limits reported; root/content trust and CVP remain OPEN."
+    },
+    {
+      "path": "src/transparency_proof_check/input.py",
+      "sha256": "85e12410e1554e2c9d816f16b6521f0a3e5ef8e77e8f3da9861cb13a93507be4",
+      "review": "Every descriptor open/read/close and rejection path reviewed. Full POSIX flag/dir_fd prerequisite, raw parent segment rejection, all-component no-follow, nonblocking regular-file check and change detection."
+    },
+    {
+      "path": "src/transparency_proof_check/cli.py",
+      "sha256": "7345b1028de6adfb037866a7872889a299432616aee8f1a123eb0b7aa0aeae52",
+      "review": "Argument parsing, type/limits validation, JSON stdout and status-derived exits reviewed. Missing/unknown/nonnumeric arguments return fixed invalid_arguments JSON OPEN/exit2 with no argument echo or stderr; ordinary --help remains exit0. No input writes or remote operations."
+    },
+    {
+      "path": "src/transparency_proof_check/__init__.py",
+      "sha256": "307c2463b568db1842f0d3c97afaf5b6b6803ddc7dda8f5b886263301beeacc5",
+      "review": "Reviewed public export boundary: Limits/check_bytes/check_file."
+    },
+    {
+      "path": "src/transparency_proof_check/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "review": "Reviewed module command exit propagation."
+    },
+    {
+      "path": "tests/reference_tree.py",
+      "sha256": "d59bcf491e58cb1de9b66bd0df316ffee48848ef0fd4b8bd469103ab5ee232b5",
+      "review": "Independent synthetic recursive tree/proof oracle uses raw leaves and stdlib hashlib; no production proof/hash imports."
+    },
+    {
+      "path": "tests/test_proofs.py",
+      "sha256": "9a7d7193219bed989f698e99cc4b4681632ab9e7bf78863dcce75bf467759f1e",
+      "review": "All assertions reviewed: 2080 inclusion + 2080 prefix generated cases, 196 fixed refs, intentional short-root OPEN divergence, negative binding, exact path length, uint64/65-node structure and external trust."
+    },
+    {
+      "path": "tests/test_contract.py",
+      "sha256": "d779c78dd1f67de82c12efca6b53f285685e829b9806272342218d067a1cdfec",
+      "review": "All assertions reviewed: malformed schema/encoding/JSON, budget and API type boundaries, safe-reader unsupported/symlink/non-regular/change paths, CLI0/1/2, privacy, immutable input and JSON argument-error regressions (empty/unknown/nonnumeric arguments; help)."
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "a063fb6132e4fd2a1d650b6e928f31231738fb75af89e58eef7c581176a70d17",
+      "review": "Package entry point, Python floor, Apache-2.0 license files, packaged provenance/docs/examples, empty runtime deps and isolated setuptools build dependency reviewed."
+    },
+    {
+      "path": "MANIFEST.in",
+      "sha256": "c2662805903d891c84e8e3f25e3a9bf5466392ce48beb7f8fc82ba70465bc737",
+      "review": "sdist includes all tests/reference JSON, examples, attribution/docs/source review and pinned workflow; virtualenv/build outputs excluded."
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "sha256": "2f69505056516fc77b87d204a90bd743ac080b950a2dac721ba55084608ae798",
+      "review": "All workflow steps and permissions reviewed. Commit-pinned actions, contents:read only, Python3.11/3.14 matrix, source/installed tests/build, CLI outcomes. YAML and embedded Python/shell syntax checked. Remote runs OPEN."
+    },
+    {
+      "path": "README.md",
+      "sha256": "ac0e6eaa15ed5acf9d73d5e8cab213c6650001b6c262e2544f8fb92aeae4063b",
+      "review": "Entire document reviewed against runtime input/output and supported scope, POSIX reader limits, explicit trust assumptions and unsupported compact/subtree/empty-old-tree cases."
+    },
+    {
+      "path": "ORIGIN.md",
+      "sha256": "8151a0d29c82f87bfc981e6afbca6f3ee934269359acc05ff5d085bd86badd6f",
+      "review": "Entire document reviewed for fixed source/assisted development attribution and no applicant/upstream authorship transfer."
+    },
+    {
+      "path": "DEFENSIVE_SCOPE.md",
+      "sha256": "00361bcc127a675184846243853fa719d391af2eecdd1f8975b63f88b604e1a7",
+      "review": "Entire document reviewed for defensive use, scope change, privacy and engineering/CVP separation."
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "9c7a798b42bea99db2a5f80db1fc6cdd0aa9de9c1af9a04c6edf07f5bb89f951",
+      "review": "Reviewed preserved original selected-core Google copyright notices and transformed vector attribution."
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "review": "Identical upstream Apache2.0 license; fixed hash verified."
+    },
+    {
+      "path": "VALIDATION.md",
+      "sha256": "0f252aae6ccae13f3f2f6d94a704aa002427f1dd1c3308055cf2b1c406870772",
+      "review": "Final 22-test/source/installed validation record reviewed, including corrected JSON argument error contract and original argparse echo behavior. Package snapshots match final source during revalidation."
+    }
+  ],
+  "runtime_dependencies": {
+    "third_party": [],
+    "stdlib": [
+      "argparse",
+      "base64",
+      "binascii",
+      "dataclasses",
+      "hashlib",
+      "json",
+      "os",
+      "re",
+      "stat"
+    ]
+  },
+  "algorithm_independent_review": {
+    "agent": "merkle_algorithm_check",
+    "upstream_code_executed": false,
+    "independent_standard_loop_ref_results": {
+      "inclusion": {
+        "matched": 98,
+        "total": 98
+      },
+      "consistency": {
+        "matched": 97,
+        "total": 98,
+        "difference": "Equal size1 short root accepted upstream; strict SHA256 returns OPEN"
+      }
+    },
+    "independent_recursive_shape_comparisons": 65536,
+    "shape_max_tree_size": 256,
+    "scope": "Standards/math and fixed-source probe verification only; not a whole upstream/source/package audit."
+  },
+  "cli_argument_error_fix": {
+    "original": "Standard argparse errors could echo argument text to stderr and lacked JSON OPEN output.",
+    "status": "FIXED: fixed parser.error override, original values omitted, JSON OPEN/exit2; help unchanged.",
+    "regressions": [
+      "empty args",
+      "unknown option",
+      "nonnumeric limit",
+      "ordinary help"
+    ]
+  }
+}

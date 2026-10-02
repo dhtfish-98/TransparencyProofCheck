@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transparency-proof-check"
+version = "0.1.0"
+description = "Bounded offline SHA-256 Merkle inclusion and consistency proof relation checker"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+dependencies = []
+classifiers = ["Programming Language :: Python :: 3", "Topic :: Security"]
+
+[project.scripts]
+transparency-proof-check = "transparency_proof_check.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.data-files]
+"share/transparency-proof-check" = ["ORIGIN.md", "DEFENSIVE_SCOPE.md", "VALIDATION.md", "SOURCE_REVIEW.json"]
+"share/transparency-proof-check/examples" = ["examples/inclusion-empty-leaf.json", "examples/consistency-same-size.json"]
