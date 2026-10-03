@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "project": "TransparencyProofCheck",
+  "version": "0.1.1",
+  "author": "dhtfish98",
+  "scope": "Current selected implementation and repository files; self manifest excluded to avoid a hash cycle. Upstream source commits remain in ORIGIN/source review records.",
+  "files": [
+    {
+      "path": ".github/workflows/verify.yml",
+      "sha256": "2f69505056516fc77b87d204a90bd743ac080b950a2dac721ba55084608ae798",
+      "bytes": 1971
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "0d0ddb7b27c1c4133dcca4cd35ec963f62fdf1e26f3032bc5fb139f29da9627a",
+      "bytes": 82
+    },
+    {
+      "path": "DEFENSIVE_SCOPE.md",
+      "sha256": "00361bcc127a675184846243853fa719d391af2eecdd1f8975b63f88b604e1a7",
+      "bytes": 2065
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    },
+    {
+      "path": "MANIFEST.in",
+      "sha256": "264aeed034f990382a1ed16aab73780c4df97a07d2c2a9116dc3be1790404c6c",
+      "bytes": 217
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "ba9f5847608d2877e42c447c147febd3e8245721db8b96cdcebe6fcf8e493c80",
+      "bytes": 987
+    },
+    {
+      "path": "ORIGIN.md",
+      "sha256": "8efbbe858f51523d60b4ca55c3939abd2106c8ef1d702b97202418af545da0ca",
+      "bytes": 2044
+    },
+    {
+      "path": "README.md",
+      "sha256": "9a580617dd1ccab81de59050345ea8c94a62c01a3d849728c2b382e0378b5158",
+      "bytes": 8262
+    },
+    {
+      "path": "SOURCE_REVIEW.json",
+      "sha256": "4210c1743fa7444cb64b4c1f8b9b47dce10c54184a7b7df845f75ef32356224f",
+      "bytes": 11162
+    },
+    {
+      "path": "VALIDATION.md",
+      "sha256": "78b67cb49c7a2bf963a87426e77564977ee82f7842f51b3c0bd45258b640959c",
+      "bytes": 6308
+    },
+    {
+      "path": "examples/consistency-same-size.json",
+      "sha256": "104371135b9fd93e2eb59a3c8f5a12bb01edda8f018896561ba90f4f85c7464c",
+      "bytes": 299
+    },
+    {
+      "path": "examples/inclusion-empty-leaf.json",
+      "sha256": "8c2432a1fa582b61ef54f197f94d157a5ce3908687337ed7229d3435450daa92",
+      "bytes": 274
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "09208c431e7f7983c9bbc66ebbcb35779c04544eb4c45fc9b1d193c30d8c9c70",
+      "bytes": 909
+    },
+    {
+      "path": "src/transparency_proof_check/__init__.py",
+      "sha256": "2ad6a6934d4f6a17c3c1cf92f842a0871f8ad65589d16beff905bd05145c383f",
+      "bytes": 228
+    },
+    {
+      "path": "src/transparency_proof_check/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "bytes": 48
+    },
+    {
+      "path": "src/transparency_proof_check/cli.py",
+      "sha256": "7345b1028de6adfb037866a7872889a299432616aee8f1a123eb0b7aa0aeae52",
+      "bytes": 1466
+    },
+    {
+      "path": "src/transparency_proof_check/evidence.py",
+      "sha256": "bd196f82a2ef36fa43ece0f7b062c34d72d734a4ce6334bd4765d4b4946b44c7",
+      "bytes": 9401
+    },
+    {
+      "path": "src/transparency_proof_check/input.py",
+      "sha256": "0abff55640425845c578274015fe0a403ea697b0757e42e329d40896f718f7a2",
+      "bytes": 3034
+    },
+    {
+      "path": "src/transparency_proof_check/proof.py",
+      "sha256": "58f092e2a140c7583c1ebb81f0b4cf45bcd854ba7556b85bd641b8cc772039aa",
+      "bytes": 3500
+    },
+    {
+      "path": "tests/reference_tree.py",
+      "sha256": "d59bcf491e58cb1de9b66bd0df316ffee48848ef0fd4b8bd469103ab5ee232b5",
+      "bytes": 2107
+    },
+    {
+      "path": "tests/test_capabilities.py",
+      "sha256": "c30eae0a5bc9f2fac7a6640703fdf83d8fe3972f5f8b3a9bd2c4a12bdcf58811",
+      "bytes": 1965
+    },
+    {
+      "path": "tests/test_contract.py",
+      "sha256": "d779c78dd1f67de82c12efca6b53f285685e829b9806272342218d067a1cdfec",
+      "bytes": 11818
+    },
+    {
+      "path": "tests/test_dirfd_capabilities.py",
+      "sha256": "d98370f5c8e685f74855f043125977f5d0455fe60766f37ae7fecadcd70a9722",
+      "bytes": 4641
+    },
+    {
+      "path": "tests/test_proofs.py",
+      "sha256": "9a7d7193219bed989f698e99cc4b4681632ab9e7bf78863dcce75bf467759f1e",
+      "bytes": 10345
+    },
+    {
+      "path": "tests/upstream_vectors.json",
+      "sha256": "b80e65e15a09c4fb09e3372e22ebd6f74ce7af8f6f3052156eba2ffec7eca309",
+      "bytes": 161111
+    }
+  ]
+}

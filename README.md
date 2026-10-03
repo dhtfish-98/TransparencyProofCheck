@@ -151,8 +151,16 @@ generation outside synthetic tests, and checkpoint signing are unsupported.
 This is not a rewrite of the entire Go library.
 
 [ORIGIN.md](ORIGIN.md), [NOTICE](NOTICE), and [SOURCE_REVIEW.json](SOURCE_REVIEW.json)
-retain original ownership, license and reviewed-source evidence. New runtime,
-CLI, tests and documentation were produced with Codex assistance. This record
+retain original ownership, license and reviewed-source evidence.
+New implementation author and maintainer: dhtfish98. This record
 does not establish the applicant's personal authorship or CVP approval.
 See [VALIDATION.md](VALIDATION.md) for measured checks and
 [DEFENSIVE_SCOPE.md](DEFENSIVE_SCOPE.md) for the defensive boundary.
+
+Local file I/O requires the positive integer OS protection flags documented by
+the reader/writer. Missing, zero, None, Boolean or non-integer flags return a
+controlled OPEN/error before requested filesystem input/output instead of
+weakening the boundary. Native
+Windows file I/O is not verified; the current verification is macOS POSIX.
+
+Directory descriptor capability contract: `os.supports_dir_fd` must be a set or frozenset containing `os.open` before requested local file access. Missing, malformed or incomplete capability declarations return the existing controlled OPEN/error result. This finite POSIX contract is checked locally; native Windows file operations are not implemented or claimed.

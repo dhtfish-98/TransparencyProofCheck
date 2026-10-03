@@ -79,7 +79,7 @@
     "online acquisition",
     "production proof generation"
   ],
-  "attribution": "Original Google notices retained in NOTICE; new code and docs produced with Codex assistance.",
+  "attribution": "Original Google notices retained in NOTICE; new implementation author and maintainer dhtfish98.",
   "external_claims": {
     "root_authenticity": "OPEN",
     "content_authenticity": "OPEN",
@@ -219,5 +219,11 @@
       "nonnumeric limit",
       "ordinary help"
     ]
+  },
+  "current_implementation": {
+    "version": "0.1.1",
+    "author": "dhtfish98",
+    "source_manifest": "SOURCE_MANIFEST.json",
+    "historical_review_hashes": "Earlier new-implementation hashes describe their original reviewed snapshots; use SOURCE_MANIFEST.json for this version."
   }
 }

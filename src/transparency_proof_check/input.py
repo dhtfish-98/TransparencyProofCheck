@@ -10,7 +10,8 @@ def check_file(path: str | os.PathLike[str], limits: Limits | None = None) -> di
     limits = _limits(limits)
     rejected = lambda code: open_report(code, limits=limits)
     flags = ("O_NOFOLLOW", "O_DIRECTORY", "O_CLOEXEC", "O_NONBLOCK")
-    if (os.name != "posix" or any(not hasattr(os, flag) for flag in flags)
+    if (os.name != "posix" or any(type(getattr(os, flag, None)) is not int or getattr(os, flag, 0) <= 0 for flag in flags)
+            or type(getattr(os, "supports_dir_fd", None)) not in (set, frozenset)
             or os.open not in os.supports_dir_fd):
         return rejected("safe_local_read_unavailable")
     try:

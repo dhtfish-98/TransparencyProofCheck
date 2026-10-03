@@ -23,14 +23,14 @@ not a whole-repository semantic audit.
 
 All Python runtime, local JSON/file boundary, CLI, independent synthetic tree
 oracle, test assertions, package configuration and documentation in this
-project were written as a new implementation with Codex assistance. The
+project were written as a new implementation; new implementation author and maintainer: dhtfish98. The
 runtime does not import, execute, bind to, or shell out to the Go library.
 The fixed vector data retains Apache-2.0 attribution. Standard mathematical
 definitions were implemented in new Python code; RFC prose and pseudocode
 were not copied verbatim.
 
 The applicant must accurately describe their own review, implementation and
-testing contribution. This package records assisted development and does not
-declare exclusive human authorship. No project name, repository count, test
+testing contribution. This package attributes the new implementation only; original source and data
+notices retain their separate authorship. No project name, repository count, test
 pass or publication establishes CVP eligibility, organizational status,
 identity verification or exemption from cyber safeguards; those remain OPEN.
