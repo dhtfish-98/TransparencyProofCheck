@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "TransparencyProofCheck",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "dhtfish98",
   "scope": "Current selected implementation and repository files; self manifest excluded to avoid a hash cycle. Upstream source commits remain in ORIGIN/source review records.",
   "files": [
@@ -47,13 +47,13 @@
     },
     {
       "path": "SOURCE_REVIEW.json",
-      "sha256": "4210c1743fa7444cb64b4c1f8b9b47dce10c54184a7b7df845f75ef32356224f",
-      "bytes": 11162
+      "sha256": "6e32945b0e47767bca8aa0f2a3585c29851c4bb8ac436baf2a6b3cafe86a8865",
+      "bytes": 11501
     },
     {
       "path": "VALIDATION.md",
-      "sha256": "78b67cb49c7a2bf963a87426e77564977ee82f7842f51b3c0bd45258b640959c",
-      "bytes": 6308
+      "sha256": "66b47bc74c21142a2c220798e3f63340b51f23b5cfe5b94212e692e6560862d8",
+      "bytes": 7647
     },
     {
       "path": "examples/consistency-same-size.json",
@@ -67,12 +67,12 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "09208c431e7f7983c9bbc66ebbcb35779c04544eb4c45fc9b1d193c30d8c9c70",
+      "sha256": "191c0a51cda264d1c0d74b9d8cb69e4f9f946faf0bf278741f9e357a3e76cd7d",
       "bytes": 909
     },
     {
       "path": "src/transparency_proof_check/__init__.py",
-      "sha256": "2ad6a6934d4f6a17c3c1cf92f842a0871f8ad65589d16beff905bd05145c383f",
+      "sha256": "c3ac6d0eed76928a23aa6b3c0078fe977c0ebffc403bd92de0f68e21acc2df09",
       "bytes": 228
     },
     {
@@ -130,5 +130,6 @@
       "sha256": "b80e65e15a09c4fb09e3372e22ebd6f74ce7af8f6f3052156eba2ffec7eca309",
       "bytes": 161111
     }
-  ]
+  ],
+  "license_cleanup": "Only approved reference-only copies removed; applicable data/code/terms and own LICENSE preserved."
 }

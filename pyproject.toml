@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "transparency-proof-check"
-version = "0.1.1"
+version = "0.1.2"
 description = "Bounded offline SHA-256 Merkle inclusion and consistency proof relation checker"
 readme = "README.md"
 requires-python = ">=3.11"
