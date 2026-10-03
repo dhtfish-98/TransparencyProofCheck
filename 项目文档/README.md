@@ -1,3 +1,5 @@
+> 目录已整理：文档在「项目文档」，构建、缓存与暂存输入在「Build」。从仓库根目录运行 `python3 构建.py --build`；如需使用本文原有源码命令，先运行 `python3 构建.py --stage --ci`，再进入 `Build/源码`。暂存会恢复原输入路径。现有版本和历史验证记录按各自提交理解。
+
 # TransparencyProofCheck
 
 TransparencyProofCheck verifies **offline SHA-256 Merkle inclusion and tree
@@ -150,12 +152,12 @@ merging, subtree extensions, other hash algorithms, online logs, proof
 generation outside synthetic tests, and checkpoint signing are unsupported.
 This is not a rewrite of the entire Go library.
 
-[ORIGIN.md](ORIGIN.md), [NOTICE](NOTICE), and [SOURCE_REVIEW.json](SOURCE_REVIEW.json)
+[ORIGIN.md](<ORIGIN.md>), [NOTICE](<NOTICE>), and [SOURCE_REVIEW.json](<../SOURCE_REVIEW.json>)
 retain original ownership, license and reviewed-source evidence.
 New implementation author and maintainer: dhtfish98. This record
 does not establish the applicant's personal authorship or CVP approval.
-See [VALIDATION.md](VALIDATION.md) for measured checks and
-[DEFENSIVE_SCOPE.md](DEFENSIVE_SCOPE.md) for the defensive boundary.
+See [VALIDATION.md](<VALIDATION.md>) for measured checks and
+[DEFENSIVE_SCOPE.md](<DEFENSIVE_SCOPE.md>) for the defensive boundary.
 
 Local file I/O requires the positive integer OS protection flags documented by
 the reader/writer. Missing, zero, None, Boolean or non-integer flags return a
