@@ -152,7 +152,7 @@ merging, subtree extensions, other hash algorithms, online logs, proof
 generation outside synthetic tests, and checkpoint signing are unsupported.
 This is not a rewrite of the entire Go library.
 
-[ORIGIN.md](<ORIGIN.md>), [NOTICE](<NOTICE>), and [SOURCE_REVIEW.json](<../SOURCE_REVIEW.json>)
+[ORIGIN.md](<ORIGIN.md>), [NOTICE](<NOTICE>), and [SOURCE_REVIEW.json](<SOURCE_REVIEW.json>)
 retain original ownership, license and reviewed-source evidence.
 New implementation author and maintainer: dhtfish98. This record
 does not establish the applicant's personal authorship or CVP approval.

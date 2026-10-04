@@ -22,5 +22,5 @@ transparency-proof-check = "transparency_proof_check.cli:main"
 where = ["src"]
 
 [tool.setuptools.data-files]
-"share/transparency-proof-check" = ["项目文档/ORIGIN.md", "项目文档/DEFENSIVE_SCOPE.md", "项目文档/VALIDATION.md", "SOURCE_REVIEW.json"]
+"share/transparency-proof-check" = ["项目文档/ORIGIN.md", "项目文档/DEFENSIVE_SCOPE.md", "项目文档/VALIDATION.md", "项目文档/SOURCE_REVIEW.json"]
 "share/transparency-proof-check/examples" = ["examples/inclusion-empty-leaf.json", "examples/consistency-same-size.json"]
